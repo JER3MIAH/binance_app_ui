@@ -33,7 +33,7 @@ migrate_working_dir/
 /build/
 /android/app/src/main/AndroidManifest.xml
 /ios/Runner/AppDelegate.swift
-lib/ui/secrets/consts.dart
+lib/secrets/consts.dart
 
 # Symbolication related
 app.*.symbols

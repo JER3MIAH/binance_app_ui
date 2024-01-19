@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:food_delivery_app/ui/components/components.dart';
-import 'package:food_delivery_app/ui/secrets/secrets.dart';
+import 'package:food_delivery_app/secrets/secrets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
