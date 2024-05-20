@@ -10,9 +10,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: theme.background,
-      body: const SingleChildScrollView(
-        child: HomeBody(),
-      ),
+      body: const HomeBody(),
     );
   }
 }

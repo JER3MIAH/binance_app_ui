@@ -6,10 +6,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class BorderedContainer extends ConsumerWidget {
   final Widget? child;
   final double height;
+  final EdgeInsetsGeometry? padding;
   const BorderedContainer({
     super.key,
     this.child,
     required this.height,
+    this.padding,
   });
 
   @override
@@ -19,6 +21,7 @@ class BorderedContainer extends ConsumerWidget {
     return Container(
       height: height,
       width: double.infinity,
+      padding: padding,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
         border: Border.all(

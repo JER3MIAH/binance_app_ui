@@ -17,7 +17,7 @@ class TopBar extends ConsumerWidget {
     }
 
     return Container(
-      height: 108.dy,
+      height: 78.dy,
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.primary,

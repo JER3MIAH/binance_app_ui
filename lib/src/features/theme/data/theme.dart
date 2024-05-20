@@ -32,6 +32,7 @@ ThemeData darkTheme = ThemeData(
     ),
   ).apply(
     fontFamily: 'Satoshi',
+    bodyColor: appColors.black,
   ),
   useMaterial3: true,
   colorScheme: ColorScheme.dark(
