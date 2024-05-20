@@ -35,7 +35,6 @@ class CustomCheckBox extends ConsumerWidget {
                 width: 16.dy,
                 padding: EdgeInsets.all(1.4.dy),
                 decoration: BoxDecoration(
-                  color: appColors.white,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(4),
                   border: Border.all(
@@ -46,7 +45,7 @@ class CustomCheckBox extends ConsumerWidget {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: isSelected ? appColors.green : appColors.white,
+                    color: isSelected ? appColors.green : Colors.transparent,
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(2),
                   ),
