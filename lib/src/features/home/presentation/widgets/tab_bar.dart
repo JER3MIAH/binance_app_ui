@@ -8,15 +8,20 @@ class CustomTabBar extends ConsumerWidget {
   final TabController tabController;
   final bool isScrollable;
   final List<Widget> tabs;
-  final EdgeInsetsGeometry? labelPadding;
+  final EdgeInsetsGeometry? padding, labelPadding;
   final TabAlignment? tabAlignment;
+  final bool hasBorder;
+  final double? height;
   const CustomTabBar({
     super.key,
     required this.tabController,
     required this.tabs,
     this.isScrollable = false,
+    this.padding,
     this.labelPadding,
     this.tabAlignment,
+    this.hasBorder = false,
+    this.height,
   });
 
   @override
@@ -25,7 +30,7 @@ class CustomTabBar extends ConsumerWidget {
     final isDarkmode = ref.watch(themeProvider).isDarkMode;
 
     return Container(
-      height: 40.dy,
+      height: height ?? 40.dy,
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 15.dx),
       decoration: BoxDecoration(
@@ -51,8 +56,13 @@ class CustomTabBar extends ConsumerWidget {
           color: isDarkmode
               ? const Color(0xFFE9F0FF).withOpacity(.05)
               : appColors.white,
+          border: hasBorder
+              ? Border.all(
+                  color: appColors.green,
+                )
+              : null,
         ),
-        padding: EdgeInsets.all(4.dx),
+        padding: padding ?? EdgeInsets.all(4.dx),
         labelPadding: labelPadding ?? EdgeInsets.zero,
         tabAlignment: tabAlignment,
         overlayColor: const MaterialStatePropertyAll(Colors.transparent),

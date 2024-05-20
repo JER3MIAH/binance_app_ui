@@ -3,6 +3,7 @@ import 'package:binance_app_ui/src/features/theme/logic/theme_provider.dart';
 import 'package:binance_app_ui/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'features/home/presentation/screens/home_screen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends ConsumerWidget {
         data: MediaQuery.of(context).copyWith(
           textScaler: const TextScaler.linear(1),
         ),
-        child: MaterialApp(
+        child: GetMaterialApp(
           title: 'Binance UI',
           theme: themeProv.isDarkMode ? darkTheme : lightTheme,
           debugShowCheckedModeBanner: false,

@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: theme.background,
       body: const HomeBody(),
     );

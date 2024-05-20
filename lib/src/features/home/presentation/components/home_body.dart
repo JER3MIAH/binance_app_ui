@@ -1,17 +1,12 @@
-import 'package:binance_app_ui/src/features/home/presentation/components/tabbar_views/orders/open_order.dart';
-import 'package:binance_app_ui/src/features/home/presentation/components/tabbar_views/orders/order_history.dart';
-import 'package:binance_app_ui/src/features/home/presentation/components/tabbar_views/orders/positions.dart';
-import 'package:binance_app_ui/src/features/home/presentation/components/tabbar_views/orders/trade_history.dart';
-import 'package:binance_app_ui/src/features/home/presentation/components/top_bar.dart';
+import 'package:binance_app_ui/src/features/home/presentation/components/components.dart';
 import 'package:binance_app_ui/src/features/home/presentation/widgets/widgets.dart';
+import 'package:binance_app_ui/src/features/navigation/app_navigator.dart';
 import 'package:binance_app_ui/src/features/theme/data/theme.dart';
 import 'package:binance_app_ui/src/features/theme/logic/theme_provider.dart';
 import 'package:binance_app_ui/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'tabbar_views/tabbar_views.dart';
 
 class HomeBody extends HookConsumerWidget {
   const HomeBody({super.key});
@@ -23,14 +18,17 @@ class HomeBody extends HookConsumerWidget {
     final firstTabController = useTabController(initialLength: 3);
     final secondTabController = useTabController(initialLength: 4);
 
-    Color color(Color light, Color dark) {
-      return isDarkmode ? dark : light;
-    }
-
     final style = TextStyle(
       fontSize: 18.sp,
       fontWeight: FontWeight.w500,
     );
+
+    void showBottomSheet() {
+      AppNavigator.showBottomSheet(
+        content: const BottomSheetContent(),
+        bgColor: isDarkmode ? const Color(0xFF20252B) : appColors.white,
+      );
+    }
 
     return DefaultTabController(
       length: 3,
@@ -169,12 +167,16 @@ class HomeBody extends HookConsumerWidget {
                   children: [
                     BuyOrSellButton(
                       isSell: false,
-                      onTap: () {},
+                      onTap: () {
+                        showBottomSheet();
+                      },
                     ),
                     XBox(18.dx),
                     BuyOrSellButton(
                       isSell: true,
-                      onTap: () {},
+                      onTap: () {
+                        showBottomSheet();
+                      },
                     ),
                   ],
                 ),

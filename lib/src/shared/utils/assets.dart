@@ -15,6 +15,7 @@ final String chartIcon = 'chartIcon'.svg;
 final String clockIcon = 'clockIcon'.svg;
 final String highIcon = 'highIcon'.svg;
 final String lowIcon = 'lowIcon'.svg;
+final String infoIcon = 'infoIcon'.svg;
 
 // extensions
 extension ImageExtension on String {
