@@ -16,11 +16,9 @@ dependencies:
   flutter_riverpod: ^2.5.1
   hooks_riverpod: ^2.5.1
   get: ^4.6.6
-  google_fonts: ^6.2.1
   flutter_hooks: ^0.20.5
   flutter_svg: ^2.0.10+1
   dio: ^5.4.3+1
-  lottie: ^3.1.1
   intl: ^0.19.0
 
 dev_dependencies:
@@ -43,3 +41,11 @@ flutter:
   assets:
     - assets/pngs/
     - assets/svgs/
+
+  fonts:
+    - family: Satoshi
+      fonts:
+        - asset: assets/fonts/Satoshi-Bold.otf
+        - asset: assets/fonts/Satoshi-Light.otf
+        - asset: assets/fonts/Satoshi-Medium.otf
+        - asset: assets/fonts/Satoshi-Regular.otf

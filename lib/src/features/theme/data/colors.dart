@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
+//? lt = light theme
+//? dt = dark theme
+
 class AppColors {
-  Color blue = const Color(0xFF3B45F1);
-  Color coolGrey = const Color(0xFF476072);
-  Color darkBlue = const Color(0xFF072F5F);
   Color white = const Color(0xFFFFFFFF);
-  Color error = Colors.red;
-  Color grey = const Color(0xff343434);
-  Color barrierColor = const Color(0X8010031C);
-  Color backGroundColor = const Color(0xffE5E5E5);
-  Color inputFieldBorderColor = const Color(0xFF898989);
-  Color inputFieldTextColor = const Color(0xFF898989);
-  Color black = const Color(0xFF1B2124);
-  Color scaffoldColor = const Color(0xFFFCFCFC);
-  Color success = const Color(0xFF09A160);
-  Color grey80 = const Color(0xFF808080);
+  Color black = const Color(0xFF17181B);
+  Color green = const Color(0xFF00C076);
+  Color lightGreen = const Color(0xFF25C26E);
+  Color orange = const Color(0xFFFF6838);
+  Color red = const Color(0xFFFF554A);
+
+  //? Light theme
+  Color ltgreyText = const Color(0xFF737A91);
+  Color ltBackground = const Color(0xFFFAFAFA);
+  Color ltBorder = const Color(0xFFF1F1F1);
+
+  //? Dark theme
+  Color dtgreyText = const Color(0xFFA7B1BC);
+  Color dtBackground = const Color(0xFF1C2127);
+  Color dtBorder = const Color(0xFF262932);
 }

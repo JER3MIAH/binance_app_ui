@@ -20,7 +20,7 @@ class MyApp extends ConsumerWidget {
           textScaler: const TextScaler.linear(1),
         ),
         child: MaterialApp(
-          title: 'Agency Mobile',
+          title: 'Binance UI',
           theme: themeProv.isDarkMode ? darkTheme : lightTheme,
           debugShowCheckedModeBanner: false,
           home: const HomeScreen(),
