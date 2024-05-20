@@ -92,6 +92,8 @@ class BuyBtcView extends HookConsumerWidget {
               ),
             ],
           ),
+          BuyBtcGradientButton(),
+          HorizLine(),
         ],
       ),
     );

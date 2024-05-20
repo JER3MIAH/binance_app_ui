@@ -4,3 +4,4 @@ export 'btc_stat_container.dart';
 export 'tab_bar.dart';
 export 'textfields.dart';
 export 'custom_checkbox.dart';
+export 'gradient_button.dart';
