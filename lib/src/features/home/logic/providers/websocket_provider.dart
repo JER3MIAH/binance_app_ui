@@ -12,7 +12,7 @@ class WebSocketProvider extends ChangeNotifier {
   final channel = IOWebSocketChannel.connect(
       'wss://stream.binance.com:9443/ws/btcusdt@trade');
 
-  String _btcUsdtPrice = '';
+  String _btcUsdtPrice = '20,634';
   String get btcUsdtPrice => _btcUsdtPrice;
 
   WebSocketProvider() {

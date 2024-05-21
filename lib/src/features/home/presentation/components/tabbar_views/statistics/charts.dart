@@ -73,10 +73,18 @@ class ChartsView extends ConsumerWidget {
           ),
         ),
         SfCartesianChart(
-          trackballBehavior: TrackballBehavior(),
           zoomPanBehavior: ZoomPanBehavior(
             enablePanning: true,
             zoomMode: ZoomMode.x,
+          ),
+          trackballBehavior: TrackballBehavior(
+            enable: true,
+            activationMode: ActivationMode.singleTap,
+            tooltipDisplayMode: TrackballDisplayMode.floatAllPoints,
+            markerSettings: const TrackballMarkerSettings(
+              markerVisibility: TrackballVisibilityMode.visible,
+            ),
+            // lineType: TrackballLineType.,
           ),
           series: <CandleSeries>[
             CandleSeries<ChartModel, int>(
@@ -85,7 +93,7 @@ class ChartsView extends ConsumerWidget {
               bullColor: appColors.green,
               bearColor: appColors.red,
               animationDuration: 50,
-              dataSource: ref.watch(chartProvider).mockChartData,
+              dataSource: ref.watch(chartProvider).chartData,
               xValueMapper: (ChartModel sales, _) => sales.time,
               lowValueMapper: (ChartModel sales, _) => sales.low,
               highValueMapper: (ChartModel sales, _) => sales.high,

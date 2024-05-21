@@ -63,9 +63,6 @@ class TopBar extends ConsumerWidget {
               child: SvgAsset(assetName: globeIcon),
             ),
             XBox(15.dx),
-            // GestureDetector(
-            //   child: SvgAsset(assetName: drawerIcon),
-            // ),
             PopupMenuButton(
               icon: SvgAsset(assetName: drawerIcon),
               color: isDarkmode ? const Color(0xFF1C2127) : appColors.white,
