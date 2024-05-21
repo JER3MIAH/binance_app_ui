@@ -1,9 +1,12 @@
+import 'package:binance_app_ui/src/features/home/data/models/chart.dart';
+import 'package:binance_app_ui/src/features/home/logic/providers/chart_provider.dart';
 import 'package:binance_app_ui/src/features/home/presentation/widgets/widgets.dart';
 import 'package:binance_app_ui/src/features/theme/data/theme.dart';
 import 'package:binance_app_ui/src/features/theme/logic/theme_provider.dart';
 import 'package:binance_app_ui/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartsView extends ConsumerWidget {
   const ChartsView({super.key});
@@ -68,6 +71,29 @@ class ChartsView extends ConsumerWidget {
               ],
             ),
           ),
+        ),
+        SfCartesianChart(
+          trackballBehavior: TrackballBehavior(),
+          zoomPanBehavior: ZoomPanBehavior(
+            enablePanning: true,
+            zoomMode: ZoomMode.x,
+          ),
+          series: <CandleSeries>[
+            CandleSeries<ChartModel, int>(
+              enableSolidCandles: true,
+              enableTooltip: true,
+              bullColor: appColors.green,
+              bearColor: appColors.red,
+              animationDuration: 50,
+              dataSource: ref.watch(chartProvider).mockChartData,
+              xValueMapper: (ChartModel sales, _) => sales.time,
+              lowValueMapper: (ChartModel sales, _) => sales.low,
+              highValueMapper: (ChartModel sales, _) => sales.high,
+              openValueMapper: (ChartModel sales, _) => sales.open,
+              closeValueMapper: (ChartModel sales, _) => sales.close,
+              
+            ),
+          ],
         ),
       ],
     );
