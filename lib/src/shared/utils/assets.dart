@@ -19,6 +19,12 @@ final String infoIcon = 'infoIcon'.svg;
 final String coloredDrawerIcon1 = 'coloredDrawerIcon1'.svg;
 final String coloredDrawerIcon2 = 'coloredDrawerIcon2'.svg;
 final String coloredDrawerIcon3 = 'coloredDrawerIcon3'.svg;
+final String expandIcon = 'expandIcon'.svg;
+final String candleChartIcon = 'candleChartIcon'.svg;
+final String dividerLight = 'dividerLight'.svg;
+final String dividerDark = 'dividerDark'.svg;
+final String undoIcon = 'undoIcon'.svg;
+final String redoIcon = 'redoIcon'.svg;
 
 // extensions
 extension ImageExtension on String {

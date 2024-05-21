@@ -7,3 +7,4 @@ export 'custom_checkbox.dart';
 export 'gradient_button.dart';
 export 'text_and_price.dart';
 export 'pat_row.dart';
+export 'chart_top_row.dart';
