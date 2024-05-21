@@ -1,18 +1,15 @@
+import 'package:binance_app_ui/src/features/home/data/models/pat.dart';
 import 'package:binance_app_ui/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class PATrow extends StatelessWidget {
   //? PAT = Price, Amounts, Time
   final Color ftextColor;
-  final double price, amount, total;
-  final double gWidth;
+  final PATmodel paTmodel;
   const PATrow({
     super.key,
     required this.ftextColor,
-    required this.price,
-    required this.amount,
-    required this.total,
-    this.gWidth = 1,
+    required this.paTmodel,
   });
 
   @override
@@ -33,15 +30,15 @@ class PATrow extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                price.toString(),
+                paTmodel.price.toString(),
                 style: tStyle.copyWith(color: ftextColor),
               ),
               Text(
-                amount.toString(),
+                paTmodel.amount.toString(),
                 style: tStyle,
               ),
               Text(
-                formatNumber(total),
+                formatNumber(paTmodel.total),
                 style: tStyle,
               ),
             ],
@@ -54,7 +51,7 @@ class PATrow extends StatelessWidget {
               // margin: EdgeInsets.symmetric(horizontal: 15.dx),
               alignment: Alignment.centerRight,
               height: 26.dy,
-              width: (gWidth / 100) * 328.dx,
+              width: (paTmodel.gWidth / 100) * 328.dx,
               color: ftextColor.withOpacity(.1),
             ),
           ],

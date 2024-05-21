@@ -1,3 +1,4 @@
+import 'package:binance_app_ui/src/features/home/logic/providers/orderbook_provider.dart';
 import 'package:binance_app_ui/src/features/home/presentation/widgets/widgets.dart';
 import 'package:binance_app_ui/src/features/theme/data/theme.dart';
 import 'package:binance_app_ui/src/features/theme/logic/theme_provider.dart';
@@ -19,6 +20,9 @@ class OrderBookView extends ConsumerWidget {
       fontSize: 12.sp,
       fontWeight: FontWeight.w500,
     );
+
+    final paTmodels1 = ref.watch(orderBookProvider).paTmodels1;
+    final paTmodels2 = ref.watch(orderBookProvider).paTmodels2;
 
     Widget buildHeader() {
       Widget heading(String top, String bottom) {
@@ -102,39 +106,16 @@ class OrderBookView extends ConsumerWidget {
           //*-------------------------------------------------------------------------------------
           buildHeader(),
           YBox(10.dy),
-          PATrow(
-            ftextColor: appColors.orange,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 34,
+          Column(
+            children: List.generate(
+              paTmodels1.length,
+              (index) => PATrow(
+                ftextColor: appColors.orange,
+                paTmodel: paTmodels1[index],
+              ),
+            ),
           ),
-          PATrow(
-            ftextColor: appColors.orange,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-          ),
-          PATrow(
-            ftextColor: appColors.orange,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 40,
-          ),
-          PATrow(
-            ftextColor: appColors.orange,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-          ),
-          PATrow(
-            ftextColor: appColors.orange,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 70,
-          ),
+
           //*-----------------------------------------------
           SizedBox(
             height: 48.dy,
@@ -168,39 +149,14 @@ class OrderBookView extends ConsumerWidget {
             ),
           ),
           //*-----------------------------------------------
-          PATrow(
-            ftextColor: appColors.green,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 65,
-          ),
-          PATrow(
-            ftextColor: appColors.green,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 46,
-          ),
-          PATrow(
-            ftextColor: appColors.green,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 40,
-          ),
-          PATrow(
-            ftextColor: appColors.green,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-          ),
-          PATrow(
-            ftextColor: appColors.green,
-            price: 36920.12,
-            amount: 0.758965,
-            total: 28020.98,
-            gWidth: 42,
+          Column(
+            children: List.generate(
+              paTmodels2.length,
+              (index) => PATrow(
+                ftextColor: appColors.orange,
+                paTmodel: paTmodels2[index],
+              ),
+            ),
           ),
         ],
       ),
