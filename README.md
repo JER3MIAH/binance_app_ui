@@ -1,3 +1,3 @@
 # binance_app_ui
 
-![App Demo](assets/gifs/screen-record.gif)
+<img src="assets/gifs/screen-record.gif" width="600" alt="App Demo">
