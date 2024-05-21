@@ -1,3 +1,4 @@
+import 'package:binance_app_ui/src/features/home/logic/providers/websocket_provider.dart';
 import 'package:binance_app_ui/src/features/home/presentation/components/components.dart';
 import 'package:binance_app_ui/src/features/home/presentation/widgets/widgets.dart';
 import 'package:binance_app_ui/src/features/navigation/app_navigator.dart';
@@ -59,7 +60,7 @@ class HomeBody extends HookConsumerWidget {
                         ),
                         XBox(15.dx),
                         Text(
-                          '\$20,634',
+                          '\$${ref.watch(socketProvider).btcUsdtPrice}',
                           style: style.copyWith(
                             color: appColors.green,
                           ),
