@@ -96,7 +96,7 @@ class HomeBody extends HookConsumerWidget {
               //*-------------------------------------------------------------------------------------
               YBox(5.dy),
               BorderedContainer(
-                height: 591.dx,
+                height: 530.dx,
                 child: Column(
                   children: [
                     YBox(15.dy),

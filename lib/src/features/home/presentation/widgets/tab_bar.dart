@@ -35,7 +35,7 @@ class CustomTabBar extends ConsumerWidget {
       margin: EdgeInsets.symmetric(horizontal: 15.dx),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: isDarkmode ? const Color(0xFF1C2127) : Colors.grey.shade300,
+        color: isDarkmode ? const Color(0xFF262932) : Colors.grey.shade300,
       ),
       child: TabBar(
         controller: tabController,
