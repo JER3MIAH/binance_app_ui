@@ -16,6 +16,21 @@ class TopBar extends ConsumerWidget {
       return isDarkmode ? dark : light;
     }
 
+    PopupMenuItem<dynamic> buildMenuItem(String text) {
+      return PopupMenuItem(
+          child: SizedBox(
+        width: 150.dx,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.outline,
+          ),
+        ),
+      ));
+    }
+
     return Container(
       height: 78.dy,
       width: double.infinity,
@@ -35,9 +50,10 @@ class TopBar extends ConsumerWidget {
             XBox(10.dx),
             Text(
               'Sisyphus',
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: theme.outline,
-                  ),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: theme.outline, fontSize: 20.sp),
             ),
             const Spacer(),
             SvgAsset(assetName: userIcon),
@@ -47,7 +63,29 @@ class TopBar extends ConsumerWidget {
               child: SvgAsset(assetName: globeIcon),
             ),
             XBox(15.dx),
-            SvgAsset(assetName: drawerIcon),
+            // GestureDetector(
+            //   child: SvgAsset(assetName: drawerIcon),
+            // ),
+            PopupMenuButton(
+              icon: SvgAsset(assetName: drawerIcon),
+              color: isDarkmode ? const Color(0xFF1C2127) : appColors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide(
+                  color: isDarkmode
+                      ? const Color(0xFF373B3F)
+                      : const Color(0xFFCFD9E4),
+                ),
+              ),
+              itemBuilder: (context) {
+                return [
+                  buildMenuItem('Exchange'),
+                  buildMenuItem('Wallets'),
+                  buildMenuItem('Roqqu Hub'),
+                  buildMenuItem('Log out'),
+                ];
+              },
+            )
           ],
         ),
       ),
