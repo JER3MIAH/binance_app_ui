@@ -91,7 +91,6 @@ class ChartsView extends ConsumerWidget {
               highValueMapper: (ChartModel sales, _) => sales.high,
               openValueMapper: (ChartModel sales, _) => sales.open,
               closeValueMapper: (ChartModel sales, _) => sales.close,
-              
             ),
           ],
         ),
